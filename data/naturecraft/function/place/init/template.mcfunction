@@ -1,0 +1,1 @@
+$data modify entity @s data set from storage $(name) template.$(nbt)

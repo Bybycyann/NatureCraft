@@ -1,0 +1,16 @@
+{
+    "criteria": {
+        "interaction_leftclick": {
+            "trigger": "minecraft:player_interacted_with_entity",
+            "conditions": {
+                "entity": {
+                    "type": "minecraft:interaction",
+                    "nbt":"{Tags:[\"NatureCraft.interaction_box\"]}"
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "naturecraft:right_click/0"
+    }
+}

@@ -1,0 +1,8 @@
+{
+  "criteria": {
+    "1": {
+      "trigger": "minecraft:any_block_use"
+    }
+  },
+  "rewards": {"function": "naturecraft:place/main"}
+}
