@@ -1,5 +1,5 @@
-# 朝向参数(清除缓存)
-scoreboard players set #facing NatureCraft.var -1
+# 朝向参数
+scoreboard players set #facing NatureCraft.var 1
 
 # 数据转移(这里绕一步先生成交互实体是因为Marker没碰撞体积在遇到不完整方块(比如半砖)一类不能正常生成在上表面)
 summon minecraft:marker ~ ~ ~ {Tags:["NatureCraft.data","NatureCraft.init"]}

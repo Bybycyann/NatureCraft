@@ -28,4 +28,4 @@ data modify storage naturecraft:0 model.cherry_pot set value {\
   }\
 }
 
-function naturecraft:give {name:"naturecraft:0","nbt":"cherry_pot",model:"naturecraft:0/cherry_pot",count:1}
+function naturecraft:give {name:"naturecraft:0","nbt":"cherry_pot",model:"naturecraft:0/cherry_pot",count:1,type:0}

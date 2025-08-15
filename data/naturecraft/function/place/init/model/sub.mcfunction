@@ -1,5 +1,4 @@
 # NatureCraft.data
-
 # 生成展示实体 sub标签结束后删除
 summon minecraft:item_display ~ ~ ~ {Tags: ["NatureCraft.sub","NatureCraft.display","NatureCraft.init"],\
     item: {\
