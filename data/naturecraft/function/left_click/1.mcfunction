@@ -6,7 +6,7 @@ execute as @e if score @s NatureCraft.uid = #target NatureCraft.var run tag @s a
 execute as @s run data modify entity @s interaction set from entity @s attack
 
 # 调用事件函数
-## 事件类型参数(0-place,1-leftclick,2-rightclick)
+## 事件类型参数(0-place,1-leftclick,2-rightclick,3-random,4-clock)
 scoreboard players set #event_type NatureCraft.var 1
 execute as @e[type=minecraft:marker,tag=NatureCraft.data,tag=NatureCraft.target,sort=nearest,limit=1] if data entity @s data.event.left_click at @s \
         run function naturecraft:event with entity @s data.event.left_click

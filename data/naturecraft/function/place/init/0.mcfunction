@@ -24,9 +24,11 @@ execute unless score #rot NatureCraft.var matches -135..135 run rotate @s -180.0
 # facing状态映射
 execute unless score #facing NatureCraft.var matches 1 if data entity @s data.states run function naturecraft:place/init/states
 
+# 随机刻标签
+execute if data entity @s data.event.random run tag @s add NatureCraft.randomtick
+
 # 模型
 execute rotated as @s align xyz positioned ~0.5 ~ ~0.5 run function naturecraft:place/init/model/0
-
 ## 悬挂变换(弃案)
 # execute unless score #facing NatureCraft.var matches 1 as @e[type=minecraft:item_display,tag=NatureCraft.display,tag=NatureCraft.init,sort=nearest] run function naturecraft:place/init/model/hang/0
 
