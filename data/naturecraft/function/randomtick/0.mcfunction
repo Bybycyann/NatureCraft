@@ -24,7 +24,7 @@ execute store result score #cyc NatureCraft.var run gamerule randomTickSpeed
 execute unless score #cyc NatureCraft.var matches ..0 at @n[type=minecraft:marker,tag=NatureCraft.marker] run function naturecraft:randomtick/roll
 
 # 已执行目标标记
-execute at @e[type=minecraft:marker,tag=NatureCraft.marker,sort=nearest,limit=1] as @e[type=minecraft:marker,tag=NatureCraft.data,tag=NatureCraft.mark,dx=15,dy=15,dz=15] run tag @s add NatureCraft.mark
+execute at @e[type=minecraft:marker,tag=NatureCraft.marker,sort=nearest,limit=1] as @e[type=minecraft:marker,tag=NatureCraft.data,tag=NatureCraft.randomtick,dx=15,dy=15,dz=15] run tag @s add NatureCraft.mark
 
 # 清除子区块标记
 kill @e[type=minecraft:marker,tag=NatureCraft.marker,sort=nearest,limit=1]

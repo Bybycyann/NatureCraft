@@ -203,7 +203,7 @@ function naturecraft:give {name:"<存储模型数据的命名空间ID>","nbt":"<
 - Player 在玩家与 Interaction**(main)** 交互时传递, 数据包会自动将 attack 目标传递到 interaction, 统一使用
 
   ```mcfunction
-  execute as @n[type=minecraft:interaction,tag=NatureCraft.interaction_box,NatureCraft.target] on target
+  execute as @n[type=minecraft:interaction,tag=NatureCraft.interaction_box,NatureCraft.target] on target ...
   ```
 
   调用。
@@ -228,9 +228,9 @@ function naturecraft:give {name:"<存储模型数据的命名空间ID>","nbt":"<
 
 ## 任务清单
 
-- 附着类模型放置逻辑;
+- ~~附着类模型放置逻辑~~;
+- ~~模型状态映射~~;
 - 周期事件与随机事件;
 - 游戏内模型注册;
 - GUI模型管理;
-- 更多内置事件;
-- 模型状态映射.
+- 更多内置事件.

@@ -1,4 +1,5 @@
 data modify storage naturecraft:main template.base set value {\
+  "type": "none",\
   "display": {\
     "common": {\
       "transformation": {\
