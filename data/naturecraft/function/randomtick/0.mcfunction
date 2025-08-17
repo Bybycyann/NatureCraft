@@ -19,9 +19,9 @@ execute store result entity @e[type=minecraft:marker,tag=NatureCraft.marker,sort
 
 # 随机刻事件
 ## 获取 randomTickSpeed
-execute store result score #cyc NatureCraft.var run gamerule randomTickSpeed
+execute store result score #randomTickSpeed NatureCraft.var run gamerule randomTickSpeed
 ## 抽取
-execute unless score #cyc NatureCraft.var matches ..0 at @n[type=minecraft:marker,tag=NatureCraft.marker] run function naturecraft:randomtick/roll
+execute unless score #randomTickSpeed NatureCraft.var matches ..0 at @n[type=minecraft:marker,tag=NatureCraft.marker] run function naturecraft:randomtick/roll
 
 # 已执行目标标记
 execute at @e[type=minecraft:marker,tag=NatureCraft.marker,sort=nearest,limit=1] as @e[type=minecraft:marker,tag=NatureCraft.data,tag=NatureCraft.randomtick,dx=15,dy=15,dz=15] run tag @s add NatureCraft.mark

@@ -23,7 +23,7 @@
   **数据值 (Data)** :
 
 ​	<img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**data**
-​	├─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**model** : 模型属性。在生成后**继承**于预加载 marker。
+​	├─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**model** : 模型属性。在生成后**继承**于预加载 marker。模型变体需要有该字段。
 ​	│    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**name** : 命令存储命名空间ID。
 ​	│    └─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**nbt** : 一个[NBT路径](https://zh.minecraft.wiki/w/NBT路径?variant=zh-cn)。
 ​	├─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**type** : 模型类型, 默认为`none`(默认), 其他可选值 : `hang`(悬挂)。

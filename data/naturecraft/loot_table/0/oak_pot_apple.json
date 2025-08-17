@@ -1,0 +1,14 @@
+{
+    "pools": [{
+        "rolls": 1,
+        "entries": [{
+            "type": "minecraft:item",
+            "name": "minecraft:apple",
+            "functions": [{
+                "function": "minecraft:set_count",
+                "add": false,
+                "count": {"max": 2,"min": 1}
+            }]
+        }]
+    }]
+}
