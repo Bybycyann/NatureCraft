@@ -23,7 +23,7 @@
   **数据值 (Data)** :
 
 ​	<img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**data**
-​	├─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**model** : 模型属性。在生成后**继承**于预加载 marker。模型变体需要有该字段。
+​	├─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**model** : 模型属性。在生成后**继承**于预加载 marker。包含变体的模型在注册时需要填入该字段。
 ​	│    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**name** : 命令存储命名空间ID。
 ​	│    └─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**nbt** : 一个[NBT路径](https://zh.minecraft.wiki/w/NBT路径?variant=zh-cn)。
 ​	├─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**type** : 模型类型, 默认为`none`(默认), 其他可选值 : `hang`(悬挂)。
@@ -94,6 +94,9 @@
   │    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**name** : 命令存储命名空间ID。
   │    └─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**nbt** : 一个[NBT路径](https://zh.minecraft.wiki/w/NBT路径?variant=zh-cn)。
   └─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**model** : 模型属性。
+  =    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**model** : 模型属性。在生成后**继承**于预加载 marker。包含变体的模型在注册时需要填入该字段。
+  =    │    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**name** : 命令存储命名空间ID。
+  =    │    └─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**nbt** : 一个[NBT路径](https://zh.minecraft.wiki/w/NBT路径?variant=zh-cn)。
   =    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**type** : 模型类型, 默认为`none`(默认), 其他可选值 : `hang`(悬挂)。
   =    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_bool.svg?77754" alt='布尔型' title='布尔型' width='20' height='20'>**towards** : 默认为 `true`。模型是否有朝向性, 即根据玩家放置视角决定水平朝向(NSWE), 当模型为悬挂类型时, 启用该选项可能会出错。
   =    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_list.svg?d6aa9" alt='NBT列表/JSON数组' title='NBT列表/JSON数组' width='20' height='20'>**states** : 仅在 <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**type** 为 `hang` 时启用, 与方块状态类似的, 用于定义不同情况下采用的模型映射规则。
@@ -210,7 +213,7 @@ function naturecraft:give {name:"<存储模型数据的命名空间ID>","nbt":"<
 
 ### 位置
 
-事件位置默认在 Marker 实体位置。
+事件位置默认在 Marker 实体位置, 位于放置方块中心
 
 ### 参数
 
@@ -230,7 +233,8 @@ function naturecraft:give {name:"<存储模型数据的命名空间ID>","nbt":"<
 
 - ~~附着类模型放置逻辑~~;
 - ~~模型状态映射~~;
-- 周期事件与随机事件;
+- ~~周期事件与随机事件~~;
 - 游戏内模型注册;
 - GUI模型管理;
-- 更多内置事件.
+- 更多内置事件;
+- 碰撞箱动态更新.

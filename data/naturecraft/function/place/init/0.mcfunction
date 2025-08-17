@@ -24,8 +24,11 @@ execute unless score #rot NatureCraft.var matches -135..135 run rotate @s -180.0
 # facing状态映射
 execute unless score #facing NatureCraft.var matches 1 if data entity @s data.states run function naturecraft:place/init/states
 
-# 随机刻标签
+# 时钟与随机刻
+## 随机刻
 execute if data entity @s data.event.random run tag @s add NatureCraft.randomtick
+## 时钟
+execute if data entity @s data.event.clock run function naturecraft:clock/init
 
 # 模型
 execute rotated as @s align xyz positioned ~0.5 ~ ~0.5 run function naturecraft:place/init/model/0

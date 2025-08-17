@@ -2,7 +2,7 @@
 execute store result score #facing NatureCraft.var run data get entity @s Facing
 
 # 数据转移
-summon minecraft:marker ~ ~ ~ {Tags:["NatureCraft.data","NatureCraft.init"]}
+summon minecraft:marker ~ ~0.5 ~ {Tags:["NatureCraft.data","NatureCraft.init"]}
 data modify entity @e[type=minecraft:marker,tag=NatureCraft.init,sort=nearest,limit=1] data set from entity @s data
 kill @s
 
@@ -18,7 +18,7 @@ scoreboard players add #S/N NatureCraft.uid 1
 # 放置事件调用
 ## targe标签
 tag @e[tag=NatureCraft.init] add NatureCraft.target
-## 事件类型参数(0-place,1-leftclick,2-rightclick)
+## 事件类型参数(0-place,1-leftclick,2-rightclick,3-random,4-clock)
 scoreboard players set #event_type NatureCraft.var 0
 execute as @e[type=minecraft:marker,tag=NatureCraft.data,tag=NatureCraft.init,sort=nearest,limit=1] at @s if data entity @s data.event.place run function naturecraft:event with entity @s data.event.place
 ## 标签重置
