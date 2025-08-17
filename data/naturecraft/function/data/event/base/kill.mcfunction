@@ -1,5 +1,6 @@
-# 删除模型与光照
+# 删除模型
 
 tp @e[tag=NatureCraft.target] ~ -130 ~
 kill @e[tag=NatureCraft.target]
-execute if block ~ ~ ~ minecraft:light run setblock ~ ~ ~ minecraft:air
+execute unless block ~ ~ ~ minecraft:light unless block ~ ~ ~ minecraft:barrier run return 0
+setblock ~ ~ ~ minecraft:air
