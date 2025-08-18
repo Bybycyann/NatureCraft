@@ -35,6 +35,8 @@ execute rotated as @s align xyz positioned ~0.5 ~ ~0.5 run function naturecraft:
 ## 悬挂变换(弃案)
 # execute unless score #facing NatureCraft.var matches 1 as @e[type=minecraft:item_display,tag=NatureCraft.display,tag=NatureCraft.init,sort=nearest] run function naturecraft:place/init/model/hang/0
 
+# 骑乘
+execute if data entity @s data.ride run function naturecraft:place/init/ride with entity @s data.ride.height
 # 光照
 execute if data entity @s data.light_level run function naturecraft:place/init/light
 # 碰撞箱

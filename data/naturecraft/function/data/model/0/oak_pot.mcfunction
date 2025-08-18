@@ -21,8 +21,8 @@ data modify storage naturecraft:0 model.oak_pot.0 set value {\
       "offset_z": 0.0\
     },\
     "interaction_box": {\
-      "height": 0.5,\
-      "width": 0.5,\
+      "height": 0.501,\
+      "width": 0.501,\
     },\
     "event": {\
       "random": {\
@@ -68,8 +68,8 @@ data modify storage naturecraft:0 model.oak_pot.apple set value {\
       "offset_z": 0.0\
     },\
     "interaction_box": {\
-      "height": 0.5,\
-      "width": 0.5,\
+      "height": 0.501,\
+      "width": 0.501,\
     },\
     "event": {\
       "right_click": {\

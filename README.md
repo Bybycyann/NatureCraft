@@ -42,6 +42,8 @@
 ​	│    =    └─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'> : 一个子模型定义。
 ​	│    =    =    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**model** : 一个[物品模型映射](https://zh.minecraft.wiki/w/物品模型映射)。
 ​	│    =    =    └─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'> **common** : 展示实体渲染变换属性。
+​	├─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**ride** : 骑乘属性。
+​	│    └─ <img src="https://zh.minecraft.wiki/images/Data_node_double.svg?14320" alt='双精度浮点数' title='双精度浮点数' width='20' height='20'>$\color{red}^*$**height** : 骑乘高度。
 ​	├─ <img src="https://zh.minecraft.wiki/images/Data_node_int.svg?8d24f" alt='整形' title='整型' width='20' height='20'>**light_level** : (默认为14)光照等级。
 ​	├─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**collision_box** : 碰撞箱属性。
 ​	│    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_bool.svg?77754" alt='布尔型' title='布尔型' width='20' height='20'>**barrier** : 默认为 `false`, 是否采用屏障碰撞箱。(需要注意的是, 当该选项为 `true` 时, 光照属性将不生效。)
@@ -113,6 +115,8 @@
   =    │    =    └─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'> : 一个子模型定义。
   =    │    =    =    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**model** : 一个[物品模型映射](https://zh.minecraft.wiki/w/物品模型映射)。
   =    │    =    =    └─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'> **common** : 展示实体渲染变换属性。
+  =    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**ride** : 骑乘属性。
+  =    │    └─ <img src="https://zh.minecraft.wiki/images/Data_node_double.svg?14320" alt='双精度浮点数' title='双精度浮点数' width='20' height='20'>$\color{red}^*$**height** : 骑乘高度。
   =    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_int.svg?8d24f" alt='整形' title='整型' width='20' height='20'>**light_level** : (默认为14)光照等级。
   =    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**collision_box** : 碰撞箱属性。
   =    │    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_bool.svg?77754" alt='布尔型' title='布尔型' width='20' height='20'>**barrier** : 默认为 `false`, 是否采用屏障碰撞箱。(需要注意的是, 当该选项为 `true` 时, 光照属性将不生效。)
@@ -125,7 +129,7 @@
   =    │    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_float.svg?ae55e" alt='单精度浮点数' title='单精度浮点数' width='20' height='20'>$\color{red}^*$**width** : (默认为1)交互箱的宽度。
   =    │    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_double.svg?14320" alt='双精度浮点数' title='双精度浮点数' width='20' height='20'>$\color{red}^*$**offset_x** : (默认为0)交互箱底部中心相对方块底部中心在X轴上的偏移。
   =    │    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_double.svg?14320" alt='双精度浮点数' title='双精度浮点数' width='20' height='20'>$\color{red}^*$**offset_y** : (默认为0)交互箱底部中心相对方块底部中心在Y轴上的偏移。
-  =    │    └─ <img src="https://zh.minecraft.wiki/images/Data_node_double.svg?14320" alt='双精度浮点数' title='双精度浮点数' width='20' height='20'>$\color{red}^*$**offset_z** : (默认为0)交互箱底部中心相对方块底部中心在Z轴上的偏移。
+  =    │    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_double.svg?14320" alt='双精度浮点数' title='双精度浮点数' width='20' height='20'>$\color{red}^*$**offset_z** : (默认为0)交互箱底部中心相对方块底部中心在Z轴上的偏移。
   =    │    └─ <img src="https://zh.minecraft.wiki/images/Data_node_bool.svg?77754" alt='布尔型' title='布尔型' width='20' height='20'>**response** : (默认为`false`)玩家交互时是否挥动手臂。
   =    └─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**event** : 交互事件。
   =    =    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**place** : 放置事件。
@@ -161,7 +165,7 @@
 数据包内置 `give` 函数, 可通过 `function naturecraft:give` 调用, 其语法为 :
 
 ```mcfunction
-function naturecraft:give {name:"<存储模型数据的命名空间ID>","nbt":"<模型存储的nbt路径>",model:"<一个物品模型映射>",count:<数量>}
+function naturecraft:give {name:"<存储模型数据的命名空间ID>","nbt":"<模型存储的nbt路径>",model:"<一个物品模型映射>",count:<数量>,type:"<none|hang>"}
 ```
 
 如 : 
@@ -211,7 +215,7 @@ function naturecraft:give {name:"<存储模型数据的命名空间ID>","nbt":"<
 - Player 在玩家与 Interaction**(main)** 交互时传递, 数据包会自动将 attack 目标传递到 interaction, 统一使用
 
   ```mcfunction
-  execute as @n[type=minecraft:interaction,tag=NatureCraft.interaction_box,NatureCraft.target] on target ...
+  execute as @n[type=minecraft:interaction,tag=NatureCraft.interaction_box,tag=NatureCraft.target] on target ...
   ```
 
   调用。
@@ -239,7 +243,8 @@ function naturecraft:give {name:"<存储模型数据的命名空间ID>","nbt":"<
 - ~~附着类模型放置逻辑~~;
 - ~~模型状态映射~~;
 - ~~周期事件与随机事件~~;
+- ~~简单屏障碰撞箱~~;
 - 游戏内模型注册;
 - GUI模型管理;
 - 更多内置事件;
-- 碰撞箱动态更新.
+- 实体碰撞箱动态更新.
