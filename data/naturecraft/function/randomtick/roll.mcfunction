@@ -3,7 +3,7 @@ execute store result score #random NatureCraft.var run random value 1..4096
 execute if score #random NatureCraft.var > #randomTickSpeed NatureCraft.var run return 0
 
 # 抽取目标
-execute as @e[type=minecraft:marker,tag=NatureCraft.data,tag=NatureCraft.randomtick,dx=15,dy=15,dz=15,sort=random,limit=1] run tag @s add NatureCraft.target
+execute as @e[type=minecraft:marker,tag=NatureCraft.data,tag=NatureCraft.randomtick,dx=15,dy=15.001,dz=15,sort=random,limit=1] run tag @s add NatureCraft.target
 
 # target标签
 execute store result score #target NatureCraft.var run scoreboard players get @e[type=minecraft:marker,tag=NatureCraft.data,tag=NatureCraft.target,sort=nearest,limit=1] NatureCraft.uid

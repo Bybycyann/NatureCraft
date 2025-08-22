@@ -2,7 +2,7 @@
 scoreboard players set #facing NatureCraft.var 1
 
 # 数据转移(这里绕一步先生成交互实体是因为Marker没碰撞体积在遇到不完整方块(比如半砖)一类不能正常生成在上表面)
-summon minecraft:marker ~ ~0.5 ~ {Tags:["NatureCraft.data","NatureCraft.init"]}
+summon minecraft:marker ~ ~ ~ {Tags:["NatureCraft.data","NatureCraft.init"]}
 data modify entity @e[type=minecraft:marker,tag=NatureCraft.init,sort=nearest,limit=1] data set from entity @s data
 kill @s
 

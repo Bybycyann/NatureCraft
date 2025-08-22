@@ -2,7 +2,7 @@
 execute store result score #facing NatureCraft.var run data get entity @s Facing
 
 # 数据转移
-summon minecraft:marker ~ ~0.5 ~ {Tags:["NatureCraft.data","NatureCraft.init"]}
+summon minecraft:marker ~ ~ ~ {Tags:["NatureCraft.data","NatureCraft.init"]}
 data modify entity @e[type=minecraft:marker,tag=NatureCraft.init,sort=nearest,limit=1] data set from entity @s data
 kill @s
 

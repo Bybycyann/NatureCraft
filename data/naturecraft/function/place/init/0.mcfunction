@@ -21,8 +21,14 @@ execute if score #rot NatureCraft.var matches -135..-45 run rotate @s -90.0 0.0
 ## N
 execute unless score #rot NatureCraft.var matches -135..135 run rotate @s -180.0 0.0
 
-# facing状态映射
-execute unless score #facing NatureCraft.var matches 1 if data entity @s data.states run function naturecraft:place/init/states
+# 附加标签
+data modify entity @s Tags append from entity @s data.Tags[]
+
+# 状态映射
+## Facing
+execute unless score #facing NatureCraft.var matches 1 if data entity @s data.states run function naturecraft:place/init/states/facing
+## Pizzle
+execute if data entity @s data{type:"pizzle"} at @s align xyz run function naturecraft:place/init/states/pizzle/0
 
 # 时钟与随机刻
 ## 随机刻

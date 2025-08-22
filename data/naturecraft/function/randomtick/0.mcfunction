@@ -16,6 +16,7 @@ execute at @s summon minecraft:marker run data modify entity @s Tags set value [
 execute store result entity @e[type=minecraft:marker,tag=NatureCraft.marker,sort=nearest,limit=1] Pos[0] double 1.0 run scoreboard players get #markX NatureCraft.var
 execute store result entity @e[type=minecraft:marker,tag=NatureCraft.marker,sort=nearest,limit=1] Pos[1] double 1.0 run scoreboard players get #markY NatureCraft.var
 execute store result entity @e[type=minecraft:marker,tag=NatureCraft.marker,sort=nearest,limit=1] Pos[2] double 1.0 run scoreboard players get #markZ NatureCraft.var
+execute as @e[type=minecraft:marker,tag=NatureCraft.marker,sort=nearest,limit=1] at @s run tp @s ~ ~-0.001 ~
 
 # 随机刻事件
 ## 获取 randomTickSpeed
@@ -24,7 +25,7 @@ execute store result score #randomTickSpeed NatureCraft.var run gamerule randomT
 execute unless score #randomTickSpeed NatureCraft.var matches ..0 at @n[type=minecraft:marker,tag=NatureCraft.marker] run function naturecraft:randomtick/roll
 
 # 已执行目标标记
-execute at @e[type=minecraft:marker,tag=NatureCraft.marker,sort=nearest,limit=1] as @e[type=minecraft:marker,tag=NatureCraft.data,tag=NatureCraft.randomtick,dx=15,dy=15,dz=15] run tag @s add NatureCraft.mark
+execute at @e[type=minecraft:marker,tag=NatureCraft.marker,sort=nearest,limit=1] as @e[type=minecraft:marker,tag=NatureCraft.data,tag=NatureCraft.randomtick,dx=15,dy=15.001,dz=15] run tag @s add NatureCraft.mark
 
 # 清除子区块标记
 kill @e[type=minecraft:marker,tag=NatureCraft.marker,sort=nearest,limit=1]
