@@ -1,0 +1,8 @@
+{
+    "peminder.naturecraft.license": "许可证：%s",
+    "peminder.naturecraft.link": "相关链接：%s %s",
+    "peminder.naturecraft.pack_name": "自然工艺",
+    "peminder.naturecraft.pack_description": "[lib] 简单地向游戏内注册可交互模型",
+    "peminder.naturecraft.warning": "部分功能需结合资源包使用",
+    "peminder.naturecraft.enabled_datapack": "已成功启用数据包%s"
+}
