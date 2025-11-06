@@ -1,4 +1,4 @@
-data modify storage naturecraft:0 model.amethyst set value {\
+ data modify storage naturecraft:0 model.amethyst set value {\
   "template": {\
     "name": "naturecraft:main",\
     "nbt": "base"\

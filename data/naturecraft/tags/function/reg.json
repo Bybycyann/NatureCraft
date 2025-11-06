@@ -1,0 +1,19 @@
+{
+    "replace": false,
+    "values": [
+        "naturecraft:data/template/main/base",
+        "naturecraft:data/template/main/hang",
+
+        "naturecraft:data/model/0/amethyst",
+        "naturecraft:data/model/0/pots/acacia_pot",
+        "naturecraft:data/model/0/pots/birch_pot",
+        "naturecraft:data/model/0/pots/cherry_pot",
+        "naturecraft:data/model/0/pots/dark_oak_pot",
+        "naturecraft:data/model/0/pots/jungle_pot",
+        "naturecraft:data/model/0/pots/oak_pot",
+        "naturecraft:data/model/0/pots/pale_oak_pot",
+        "naturecraft:data/model/0/pots/spruce_pot",
+        "naturecraft:data/model/0/pots/warped_pot",
+        "naturecraft:data/model/0/tables/stripped_oak_table"
+    ]
+}

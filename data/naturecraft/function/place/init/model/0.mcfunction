@@ -9,14 +9,14 @@ summon minecraft:item_display ~ ~ ~ {Tags: ["NatureCraft.root","NatureCraft.disp
 # 朝向
 rotate @e[type=minecraft:item_display,tag=NatureCraft.init,tag=NatureCraft.display,sort=nearest,limit=1] ~ ~
 # 渲染变换
-data modify entity @e[type=minecraft:item_display,tag=NatureCraft.init,tag=NatureCraft.display,sort=nearest,limit=1] {} merge from entity @s data.display.common
+data modify entity @e[type=minecraft:item_display,tag=NatureCraft.init,tag=NatureCraft.display,sort=nearest,limit=1] {} merge from storage naturecraft:main data.display.common
 # 模型数据
-data modify entity @e[type=minecraft:item_display,tag=NatureCraft.init,tag=NatureCraft.display,sort=nearest,limit=1] item.components."minecraft:item_model" set from entity @s data.display.model
+data modify entity @e[type=minecraft:item_display,tag=NatureCraft.init,tag=NatureCraft.display,sort=nearest,limit=1] item.components."minecraft:item_model" set from storage naturecraft:main data.display.model
 
 # 子模型
-execute unless data entity @s data.display.submodels run return 0
+execute unless data storage naturecraft:main data.display.submodels run return 0
 # 转存与计数
-data modify storage naturecraft:main submodels set from entity @s data.display.submodels
+data modify storage naturecraft:main submodels set from storage naturecraft:main data.display.submodels
 execute store result score #Temp NatureCraft.var run data get storage naturecraft:main submodels
 execute if score #Temp NatureCraft.var matches ..0 run return 0
 # 子模型生成

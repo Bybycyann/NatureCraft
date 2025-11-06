@@ -1,0 +1,22 @@
+{
+    "comment": "可被直接替换的方块列表",
+    "replace": false,
+    "values": [
+        "#minecraft:air",
+        "minecraft:lava",
+        "minecraft:water",
+        
+        "minecraft:short_grass",
+        "minecraft:fern",
+        "minecraft:short_dry_grass",
+        "minecraft:bush",
+        "minecraft:leaf_litter",
+        "minecraft:vine",
+        "minecraft:crimson_roots",
+        "minecraft:warped_roots",
+        "minecraft:nether_sprouts",
+        "minecraft:glow_lichen",
+        "minecraft:sculk_vein",
+        "minecraft:seagrass"        
+    ]
+}

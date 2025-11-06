@@ -13,8 +13,8 @@ $execute if score #Temp NatureCraft.var matches 0 run \
             "components": {\
               "minecraft:item_model": "$(model)",\
               "minecraft:entity_data": {\
-                "id": "minecraft:interaction",\
-                "Tags": ["NatureCraft.init"],\
+                "id": "minecraft:marker",\
+                "Tags": ["NatureCraft.data","NatureCraft.init"],\
                 "data": {\
                   "model": {\
                     "name": "$(name)",\

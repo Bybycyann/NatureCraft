@@ -4,5 +4,7 @@
       "trigger": "minecraft:any_block_use"
     }
   },
-  "rewards": {"function": "naturecraft:place/main"}
+  "rewards": {
+    "function": "naturecraft:place/main"
+  }
 }

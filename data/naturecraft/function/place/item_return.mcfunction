@@ -1,0 +1,1 @@
+$loot give @p[gamemode=!creative,tag=NatureCraft.target] loot $(loot_table)

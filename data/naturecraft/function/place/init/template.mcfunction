@@ -1,1 +1,1 @@
-$data modify entity @s data set from storage $(name) template.$(nbt)
+$data modify storage naturecraft:main data set from storage $(name) template.$(nbt)

@@ -6,3 +6,6 @@ tag @e[type=minecraft:marker,tag=NatureCraft.mark] remove NatureCraft.mark
 
 # 时钟
 execute as @e[type=minecraft:marker,tag=NatureCraft.data,tag=NatureCraft.clock] run function naturecraft:clock/0
+
+# 事件tick
+function #naturecraft:event_tick

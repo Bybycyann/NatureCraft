@@ -32,7 +32,7 @@ data modify entity @n[type=minecraft:item,tag=NatureCraft.drop] Item.components.
 data modify entity @n[type=minecraft:item,tag=NatureCraft.drop] Item.components."minecraft:custom_data".naturecraft set value {}
 ## 默认
 execute unless data entity @s data{type:"hang"} run \
-        data modify entity @n[type=minecraft:item,tag=NatureCraft.drop] Item.components."minecraft:entity_data" set value {"id": "minecraft:interaction","Tags": ["NatureCraft.init"]}
+        data modify entity @n[type=minecraft:item,tag=NatureCraft.drop] Item.components."minecraft:entity_data" set value {"id": "minecraft:marker","Tags": ["NatureCraft.data","NatureCraft.init"]}
 ## 悬挂
 execute if data entity @s data{type:"hang"} run \
         data modify entity @n[type=minecraft:item,tag=NatureCraft.drop] Item.components."minecraft:entity_data" set value {"id": "minecraft:item_frame","Tags": ["NatureCraft.init"]}

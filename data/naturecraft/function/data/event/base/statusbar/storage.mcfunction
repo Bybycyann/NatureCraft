@@ -1,0 +1,1 @@
+$execute store result score #step NatureCraft.var run data get storage $(storage) $(path) 10000

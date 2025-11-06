@@ -11,9 +11,10 @@ execute facing ^ ^ ^-1 rotated ~ 0 as @e[type=minecraft:marker,tag=NatureCraft.d
         run function naturecraft:place/init/0 with entity @s data.model
 
 # 序列分配
-scoreboard players operation @e[tag=NatureCraft.init] NatureCraft.uid = #S/N NatureCraft.uid
-# 序列uid更新
-scoreboard players add #S/N NatureCraft.uid 1
+execute store result score @e[tag=NatureCraft.init] NatureCraft.uid run scoreboard players add #S/N NatureCraft.uid 1
+
+# marker ride root
+ride @s mount @e[type=minecraft:item_display,tag=NatureCraft.root,tag=NatureCraft.init,limit=1]
 
 # 放置事件调用
 ## targe标签
@@ -22,5 +23,6 @@ tag @e[tag=NatureCraft.init] add NatureCraft.target
 scoreboard players set #event_type NatureCraft.var 0
 execute as @e[type=minecraft:marker,tag=NatureCraft.data,tag=NatureCraft.init,sort=nearest,limit=1] at @s if data entity @s data.event.place run function naturecraft:event with entity @s data.event.place
 ## 标签重置
+data remove entity @e[type=minecraft:interaction,tag=NatureCraft.target,limit=1] interaction
 tag @e[tag=NatureCraft.target] remove NatureCraft.target
 tag @e[tag=NatureCraft.init] remove NatureCraft.init
