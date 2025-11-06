@@ -1,2 +1,0 @@
-# NatureCraft
-function naturecraft:load

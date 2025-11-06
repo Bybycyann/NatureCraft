@@ -9,6 +9,9 @@ kill @s
 # 数据填充与初始化
 execute facing ^ ^ ^-1 rotated ~ 0 as @e[type=minecraft:marker,tag=NatureCraft.data,tag=NatureCraft.init,sort=nearest,limit=1] \
         run function naturecraft:place/init/0 with entity @s data.model
+# 实体数据精简
+execute as @e[type=minecraft:marker,tag=NatureCraft.data,tag=NatureCraft.init,sort=nearest,limit=1] run \
+        function naturecraft:place/datasimp
 
 # 序列分配
 scoreboard players operation @e[tag=NatureCraft.init] NatureCraft.uid = #S/N NatureCraft.uid

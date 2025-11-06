@@ -21,7 +21,10 @@ data modify storage naturecraft:0 model.cherry_pot set value {\
     "event": {\
       "const": {\
         "place": {\
-          "sound": "minecraft:block.stone.place"\
+          "sound": "block.stone.place"\
+        },\
+        "left_click": {\
+          "sound": "block.stone.break"\
         }\
       }\
     }\

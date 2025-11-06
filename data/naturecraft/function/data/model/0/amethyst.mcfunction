@@ -186,6 +186,16 @@ data modify storage naturecraft:0 model.amethyst set value {\
     "interaction_box": {\
       "height": 0.5,\
       "width": 0.5,\
+    },\
+    "event": {\
+      "const": {\
+        "place": {\
+        "sound": "block.amethyst_cluster.place"\
+        },\
+        "left_click": {\
+          "sound": "block.amethyst_cluster.break"\
+        }\
+      }\
     }\
   }\
 }

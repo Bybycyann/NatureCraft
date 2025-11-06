@@ -12,15 +12,13 @@
 - 周期事件;
 - 复合结构支持;
 - 可以坐的椅子;
-- 可供配置的状态映射.
+- 可供配置的状态映射(提供了三种映射方式, 分别为**朝向**, **范围内模型关系检查**, **谓词**).
 
 ## 数据
 
 ### 历史
 
-- 旧的 `pizzle` 状态映射 : (写着太麻烦啦, 废弃了.)
-
-![image-20250820095940941](C:\Users\Qbai\AppData\Roaming\Typora\typora-user-images\image-20250820095940941.png)
+(这里空空如也...)
 
 ### 模型数据
 
@@ -31,18 +29,18 @@
   **数据值 (Data)** :
 
 ​	<img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**data**
-​	├─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**model** : 模型属性。在生成后**继承**于预加载 marker。包含变体的模型在注册时需要填入该字段。
+​	├─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**model** : 模型索引。在生成后**继承**于预加载 marker。变体独立存储的模型在注册时需要填入该字段。
 ​	│    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**name** : 命令存储命名空间ID。
 ​	│    └─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**nbt** : 一个[NBT路径](https://zh.minecraft.wiki/w/NBT路径?variant=zh-cn)。
 ​	├─ <img src="https://zh.minecraft.wiki/images/Data_node_list.svg?d6aa9" alt='NBT列表/JSON数组' title='NBT列表/JSON数组' width='20' height='20'>**Tags** : 添加给 Marker 实体的额外标签。(仅生成模型时读取)
-​	├─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**type** : 模型类型, 默认为`none`(默认), 其他可选值 : `hang`(悬挂), `pizzle`(拼图), `predicate`(谓词)。
+​	├─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**type** : 模型类型, 默认为`none`(默认), 其他可选值 : `hang`(悬挂), `link`(连接), `predicate`(谓词)。
 ​	├─ <img src="https://zh.minecraft.wiki/images/Data_node_list.svg?d6aa9" alt='NBT列表/JSON数组' title='NBT列表/JSON数组' width='20' height='20'>**states** : 与方块状态类似的, 用于定义不同情况下采用的模型映射规则。
 ​	│    │ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**type** 为 `hang` 时:
 ​	│    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'> : 一个状态映射。
 ​	│    │    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**model** : 递归标签。包含模型, 光照, 碰撞箱与交互箱属性。
 ​	│    │    │    └─ <img src="https://zh.minecraft.wiki/images/Data_node_any.svg?d406c" alt='任意类型' title='任意类型' width='20' height='20'>**<*模型属性标签*>** : 一个模型属性。
 ​	│    │    └─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**facing** : (0≤值≤5) 匹配一个模型附着面。
-​	│    │ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**type** 为 `pizzle` 时: (Marker 会被添加一个 `NatureCraft.pizzle` 的标签, 用于接受状态更新)
+​	│    │ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**type** 为 `link` 时: (Marker 会被添加一个 `NatureCraft.link` 的标签, 用于接受状态更新)
 ​	│    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'> : 一个状态映射。
 ​	│    │    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**model** : 递归标签。包含模型, 光照, 碰撞箱与交互箱属性。
 ​	│    │    │    └─ <img src="https://zh.minecraft.wiki/images/Data_node_any.svg?d406c" alt='任意类型' title='任意类型' width='20' height='20'>**<*模型属性标签*>** : 一个模型属性。
@@ -57,6 +55,7 @@
 ​	├─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'><img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'><img src="https://zh.minecraft.wiki/images/Data_node_list.svg?d6aa9" alt='NBT列表/JSON数组' title='NBT列表/JSON数组' width='20' height='20'>**litem_name** : ([文本组件](https://zh.minecraft.wiki/w/文本组件)) 模型名称。
 ​	├─ <img src="https://zh.minecraft.wiki/images/Data_node_bool.svg?77754" alt='布尔型' title='布尔型' width='20' height='20'>**towards** : 默认为 `true`。模型是否有朝向性, 即根据玩家放置视角决定水平朝向(NSWE), 在非默认类型下启用该选项可能会出错。
 ​	├─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**display** : 外观数据。
+​	│    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**item_model** : 一个[物品模型映射](https://zh.minecraft.wiki/w/物品模型映射), 决定物品使用的模型。若不存在则与 <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>$\color{red}^*$**model** 保持一致。
 ​	│    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>$\color{red}^*$**model** : 一个[物品模型映射](https://zh.minecraft.wiki/w/物品模型映射)。
 ​	│    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'> **common** : 物品展示实体渲染变换属性。
 ​	│    │    └─ <img src="https://zh.minecraft.wiki/images/Data_node_any.svg?d406c" alt='任意类型' title='任意类型' width='20' height='20'>**<*物品展示实体标签*>** (详见[展示实体 - 中文 Minecraft Wiki](https://zh.minecraft.wiki/w/展示实体))
@@ -98,14 +97,14 @@
 
 - 需要注意的是, `hang` 模型的生成原点并不是紧贴墙面的, 而是离墙面有 `0.03125` 的距离.
 
-- 关于 `pizzle` 式模型状态映射的code键, 顺序满足 `[上,西北,北,东北,西,东,西南,南,东南,下]`, 即 :
+- 关于 `link` 式模型状态映射的code键, 顺序满足 `[上,西北,北,东北,西,东,西南,南,东南,下]`, 即 :
 
   ```
   "code":
   [   ↑,
   NW, N,NE,
    W,    E,
-  SW, S, SE,
+  SW, S,SE,
       ↓],
   ```
 
@@ -136,18 +135,33 @@
   │    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>$\color{red}^*$**name** : 命令存储命名空间ID。
   │    └─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>$\color{red}^*$**nbt** : 一个[NBT路径](https://zh.minecraft.wiki/w/NBT路径?variant=zh-cn)。
   └─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**model** : 模型属性。
-  =    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**model** : 模型属性。在生成后**继承**于预加载 marker。包含**变体**的模型在注册时根据需要填入该字段。
+  =    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**model** : 模型属性。在生成后**继承**于预加载 marker。变体独立存储的模型在注册时根据需要填入该字段。
   =    │    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**name** : 命令存储命名空间ID。
   =    │    └─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**nbt** : 一个[NBT路径](https://zh.minecraft.wiki/w/NBT路径?variant=zh-cn)。
   =    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_list.svg?d6aa9" alt='NBT列表/JSON数组' title='NBT列表/JSON数组' width='20' height='20'>**Tags** : 添加给 Marker 实体的额外标签。(仅生成模型时读取)
-  =    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**type** : 模型类型, 默认为`none`(默认), 其他可选值 : `hang`(悬挂), `pizzle`(拼图), `predicate`(谓词)。
+  =    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**type** : 模型类型, 默认为`none`(默认), 其他可选值 : `hang`(悬挂), `link`(连接), `predicate`(谓词)。
   =    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_list.svg?d6aa9" alt='NBT列表/JSON数组' title='NBT列表/JSON数组' width='20' height='20'>**states** : 与方块状态类似的, 用于定义不同情况下采用的模型映射规则。
-  =    │    └─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'> : <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**type** 为 `hang` 时的一个状态映射。
-  =    │    =    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_any.svg?d406c" alt='任意类型' title='任意类型' width='20' height='20'>**<*模型属性标签*>** : 递归标签, 与 <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**model** 键内容一致。
-  =    │    =    └─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**facing** : (0≤值≤5) 匹配一个模型附着面。
+  =    │    │ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**type** 为 `hang` 时:
+  =    │    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'> : 一个状态映射。
+  =    │    │    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**model** : 递归标签。包含模型, 光照, 碰撞箱与交互箱属性。
+  =    │    │    │    └─ <img src="https://zh.minecraft.wiki/images/Data_node_any.svg?d406c" alt='任意类型' title='任意类型' width='20' height='20'>**<*模型属性标签*>** : 一个模型属性。
+  =    │    │    └─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**facing** : (0≤值≤5) 匹配一个模型附着面。
+  =    │    │ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**type** 为 `link` 时: (Marker 会被添加一个 `NatureCraft.link` 的标签, 用于接受状态更新)
+  =    │    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'> : 一个状态映射。
+  =    │    │    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**model** : 递归标签。包含模型, 光照, 碰撞箱与交互箱属性。
+  =    │    │    │    └─ <img src="https://zh.minecraft.wiki/images/Data_node_any.svg?d406c" alt='任意类型' title='任意类型' width='20' height='20'>**<*模型属性标签*>** : 一个模型属性。
+  =    │    │    └─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**condition** : 一个条件。
+  =    │    │    =    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_list.svg?d6aa9" alt='NBT列表/JSON数组' title='NBT列表/JSON数组' width='20' height='20'>**code** : 一个10位布尔型数组, 用来描述临近10个位置满足的条件状态。
+  =    │    │    =    └─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**tag** : 要检查的位置上的模型标签。
+  =    │    │ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**type** 为 `predicate` 时:
+  =    │    └─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'> : 一个状态映射。
+  =    │    =    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**model** : 递归标签。包含模型, 光照, 碰撞箱与交互箱属性。
+  =    │    =    │    └─ <img src="https://zh.minecraft.wiki/images/Data_node_any.svg?d406c" alt='任意类型' title='任意类型' width='20' height='20'>**<*模型属性标签*>** : 一个模型属性。
+  =    │    =    └─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**predicate** : 一个谓词(支持内联定义)。
   =    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'><img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'><img src="https://zh.minecraft.wiki/images/Data_node_list.svg?d6aa9" alt='NBT列表/JSON数组' title='NBT列表/JSON数组' width='20' height='20'>**litem_name** : ([文本组件](https://zh.minecraft.wiki/w/文本组件)) 模型名称。
   =    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_bool.svg?77754" alt='布尔型' title='布尔型' width='20' height='20'>**towards** : 默认为 `true`。模型是否有朝向性, 即根据玩家放置视角决定水平朝向(NSWE), 在非默认类型下启用该选项可能会出错。
   =    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**display** : 外观数据。
+  =    │    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**item_model** : 一个[物品模型映射](https://zh.minecraft.wiki/w/物品模型映射), 决定物品状态下使用的模型。若不存在则与 <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>$\color{red}^*$**model** 保持一致。
   =    │    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>$\color{red}^*$**model** : 一个[物品模型映射](https://zh.minecraft.wiki/w/物品模型映射)。
   =    │    ├─ <img  src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20' /> **common** : 展示实体渲染变换属性。
   =    │    │    └─ <img  src="https://zh.minecraft.wiki/images/Data_node_any.svg?d406c" alt='任意类型' title='任意类型' width='20' height='20' />**<*物品展示实体标签*>** (详见[展示实体 - 中文 Minecraft Wiki](https://zh.minecraft.wiki/w/展示实体))
@@ -157,7 +171,7 @@
   =    │    =    =    └─ <img  src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20' /> **common** : 展示实体渲染变换属性。
   =    ├─ <img  src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20' />**ride** : 骑乘属性。
   =    │    └─ <img  src="https://zh.minecraft.wiki/images/Data_node_double.svg?14320" alt='双精度浮点数' title='双精度浮点数' width='20' height='20' />$\color{red}^*$**height** : 骑乘高度。
-  =    ├─ <img  src="https://zh.minecraft.wiki/images/Data_node_int.svg?8d24f" alt='整形' title='整型' width='20' height='20' />**light_level** : (默认为14)光照等级。
+  =    ├─ <img  src="https://zh.minecraft.wiki/images/Data_node_int.svg?8d24f" alt='整形' title='整型' width='20' height='20' />**light_level** : 光照等级。
   =    ├─ <img  src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20' />**collision_box** : 碰撞箱属性。
   =    │    ├─ <img  src="https://zh.minecraft.wiki/images/Data_node_bool.svg?77754" alt='布尔型' title='布尔型' width='20' height='20' />**barrier** : 默认为 `false`, 是否采用屏障碰撞箱。(需要注意的是, 当该选项为 `true` 时, 光照属性将不生效。)
   =    │    ├─ <img  src="https://zh.minecraft.wiki/images/Data_node_double.svg?14320" alt='双精度浮点数' title='双精度浮点数' width='20' height='20' />**scale** : (默认为1)碰撞箱尺寸。
@@ -176,7 +190,7 @@
   =    =    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**random** : 随机刻事件。
   =    =    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**clock** : 时钟事件(周期事件)。
   =    =    │    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_any.svg?d406c" alt='任意类型' title='任意类型' width='20' height='20'>**<*事件通用参数*>** : 一个事件通用参数(`name` & `path`)。
-  =    =    │    └─ <img src="https://zh.minecraft.wiki/images/Data_node_int.svg?8d24f" alt='整形' title='整型' width='20' height='20'>**time** : 时钟周期, 以 `tick `为单位。
+  =    =    │    └─ <img src="https://zh.minecraft.wiki/images/Data_node_int.svg?8d24f" alt='整形' title='整型' width='20' height='20'>**time** : 时钟周期, 以 `tick`为单位。
   =    =    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**left_click** : 左键事件。
   =    =    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_structure.svg?3a597" alt='NBT复合标签/JSON对象' title='NBT复合标签/JSON对象' width='20' height='20'>**right_click** : 右键事件。解析为 `<name>:data/event/<path>`。
   =    =    │    ├─ <img src="https://zh.minecraft.wiki/images/Data_node_string.svg?42545" alt='字符串' title='字符串' width='20' height='20'>**name** : 命名空间。
@@ -222,9 +236,8 @@ function naturecraft:give {name:"<存储模型数据的命名空间ID>","nbt":"<
 
 - **复合模型**
 
-  > 由于Blockbench不支持双轴旋转, 在模型表现上有所欠缺, 为了解决这个问题, 本包采用了混合模型的方法。通过将原模型拆分成子模块, 借助展示实体渲染变换, 使其整体拼装为一个整体
+  > 由于Blockbench不支持双轴旋转, 在模型表现上有所欠缺, 为了解决这个问题, 本包采用了混合模型的方法。通过将原模型拆分成子模块, 借助展示实体渲染变换, 使其整体拼装为一个整体。
 
-  
 
 ## 事件
 
@@ -246,6 +259,8 @@ function naturecraft:give {name:"<存储模型数据的命名空间ID>","nbt":"<
 
 - 拥有时钟事件和随机刻事件的模型 Marker 实体会携带 `NatureCraft.clock` 和 `NatureCraft.randomtick` 标签;
 
+- 模型类型为 `link` (连接模型) 时模型 Marker 实体会携带 `NatureCraft.link` 标签;
+
 - Marker 实体是事件函数调用时传递的执行实体**(@s)**;
 
 - Item_display**(sub)** 实体是混合模型调用的补充实体, 骑乘于 Item_display**(root)**, 需要注意的是 <img src="https://zh.minecraft.wiki/images/Data_node_list.svg?d6aa9" alt='NBT列表/JSON数组' title='NBT列表/JSON数组' width='20' height='20'>**left_rotation** 已被占用, 若需在事件中调用, 请使用 <img src="https://zh.minecraft.wiki/images/Data_node_list.svg?d6aa9" alt='NBT列表/JSON数组' title='NBT列表/JSON数组' width='20' height='20'>**right_rotation** 属性进行旋转变换;
@@ -257,8 +272,16 @@ function naturecraft:give {name:"<存储模型数据的命名空间ID>","nbt":"<
   ```mcfunction
   execute as @n[type=minecraft:interaction,tag=NatureCraft.interaction_box,tag=NatureCraft.target] on target ...
   ```
-
+  
   调用。
+  
+  > 25/10/9: 现在放置模型时也能通过以下格式索引到玩家了, 或使用 `@a[tag=NatureCraft.target,sort=nearest,limit=1]` 进行索引。
+  
+- 事件中调用以下函数可在执行位置发出一次 `link` 模型状态更新。
+
+  ```mcfunction
+  execute align xyz run function naturecraft:place/init/states/link/0
+  ```
 
 ### 位置
 
@@ -276,17 +299,35 @@ function naturecraft:give {name:"<存储模型数据的命名空间ID>","nbt":"<
   
 - **简单参数创建于传递**
 
-  数据包声明了一个计分板**`NatureCraft.var`**用于处理传参与运算, 结合虚拟实体`#CustomName`进行简单的数据处理操作。
+  数据包声明了一个计分板 `NatureCraft.var` 用于处理传参与运算, 结合虚拟实体 `#<CustomName>` 进行简单的数据处理操作。
 
-## 任务清单
+## 更新
 
-- ~~附着类模型放置逻辑~~;
-- ~~复合模型~~;
-- ~~模型状态映射~~;
-- ~~周期事件与随机事件~~;
-- ~~简单屏障碰撞箱~~;
+- 完成了附着类模型的放置逻辑;
+- 添加了复合模型来绕过Java模型只能单轴旋转的问题~~但功能不完善, 目前仅适用于静态~~;
+- 添加了连接模型的状态更新功能;
+- 添加了时钟事件与随机刻事件~~随机刻事件性能堪忧, 等待优化QWQ~~;
+- 添加了新的碰撞箱类型 `barrier`;
+- 添加了状态条事件 `naturecraft:data/event/base/statusbar/0`, 可以在其它事件中调用该事件来在模型的 y 轴方向渲染一个状态条；
+- 添加了新的破坏事件 `naturecraft:data/event/base/group/break3` 用于多次受击确认(防止模型被误触破坏), 可搭配状态条事件使用；
+- 添加了新的破坏事件 `naturecraft:data/event/base/group/break2` 用于按战利品表生成掉落物的破坏事件;
+
+### 待办
+
 - 游戏内模型注册;
 - 模型堆叠;
 - GUI模型管理;
 - 更多内置事件;
-- 实体碰撞箱动态更新.
+- 实体碰撞箱动态更新；
+- `slime` 类型交互箱兼实体碰撞箱, 用于受击监听；
+
+### 优化
+
+- 调整了模型放置阶段的数据调用, 现在会检查storage data而不是entity data;
+
+### BUG修复
+
+- 修复了通用模型放置在不完整表面吞方块的BUG~~悬挂模型的还没修~~;
+- 修复了 `NatureCraft.data` 未骑乘于 `NatureCraft.root` 的BUG;
+- 修复了由于修复吞方块BUG导致的无朝向模型随机转向的BUG;
+- 修复了由于更改数据取调地址但更改不完全导致的BUG;

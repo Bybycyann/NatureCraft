@@ -22,7 +22,10 @@ data modify storage naturecraft:0 model.jungle_pot set value {\
     "event": {\
       "const": {\
         "place": {\
-        "sound": "block.stone.place"\
+          "sound": "block.stone.place"\
+        },\
+        "left_click": {\
+          "sound": "block.stone.break"\
         }\
       }\
     }\

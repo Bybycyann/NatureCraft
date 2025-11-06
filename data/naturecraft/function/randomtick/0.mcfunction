@@ -27,5 +27,8 @@ execute unless score #randomTickSpeed NatureCraft.var matches ..0 at @n[type=min
 # 已执行目标标记
 execute at @e[type=minecraft:marker,tag=NatureCraft.marker,sort=nearest,limit=1] as @e[type=minecraft:marker,tag=NatureCraft.data,tag=NatureCraft.randomtick,dx=15,dy=15.001,dz=15] run tag @s add NatureCraft.mark
 
+# Debug
+execute at @e[type=minecraft:marker,tag=NatureCraft.marker,sort=nearest,limit=1] run particle cloud ~ ~ ~
+
 # 清除子区块标记
 kill @e[type=minecraft:marker,tag=NatureCraft.marker,sort=nearest,limit=1]

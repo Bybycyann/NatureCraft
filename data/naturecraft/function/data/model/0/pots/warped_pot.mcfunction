@@ -1,14 +1,15 @@
-data modify storage naturecraft:0 model.acacia_pot set value {\
+data modify storage naturecraft:0 model.warped_pot set value {\
   "template": {\
     "name": "naturecraft:main",\
     "nbt": "base"\
   },\
   "model":{\
-    "towards": false,\
-    "item_name": {"translate":"","fallback":"金合欢盆栽"},\
+    "towards": true,\
+    "item_name": {"translate":"","fallback":"诡异菌盆栽"},\
     "display": {\
-      "model": "naturecraft:0/pots/acacia_pot"\
+      "model": "naturecraft:0/pots/warped_pot"\
     },\
+    "light_level": 8,\
     "collision_box": {\
       "scale": 0.5,\
       "offset_x": 0.0,\
@@ -28,8 +29,8 @@ data modify storage naturecraft:0 model.acacia_pot set value {\
           "sound": "block.stone.break"\
         }\
       }\
-    }\
+    },\
   }\
 }
 
-function naturecraft:give {name:"naturecraft:0","nbt":"acacia_pot",model:"naturecraft:0/pots/acacia_pot",count:1,type:0}
+function naturecraft:give {name:"naturecraft:0","nbt":"warped_pot",model:"naturecraft:0/pots/warped_pot",count:1,type:0}

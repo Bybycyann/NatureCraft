@@ -34,6 +34,9 @@ data modify storage naturecraft:0 model.oak_pot.0 set value {\
         "place": {\
           "sound": "block.stone.place"\
         },\
+        "left_click": {\
+          "sound": "block.stone.break"\
+        },\
         "random": {\
           "name": "naturecraft:0",\
           "nbt": "oak_pot.apple"\

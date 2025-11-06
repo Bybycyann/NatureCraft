@@ -1,11 +1,11 @@
-data modify storage naturecraft:0 model.stripped_oak_table.0 set value {\
+data modify storage naturecraft:0 model.stripped_oak_table set value {\
   "template": {\
     "name": "naturecraft:main",\
     "nbt": "base"\
   },\
   "model":{\
     "Tags": ["NatureCraft.0.table.oak"],\
-    "type": "pizzle",\
+    "type": "link",\
     "states": [\
       {\
         "model": {\
@@ -998,6 +998,7 @@ data modify storage naturecraft:0 model.stripped_oak_table.0 set value {\
     "item_name": {"translate":"","fallback":"去皮橡木木桌"},\
     "towards": false,\
     "display": {\
+      "item_model": "naturecraft:0/tables/stripped_oak_table/0",\
       "model": "naturecraft:0/tables/stripped_oak_table/0"\
     },\
     "collision_box": {\
@@ -1013,11 +1014,14 @@ data modify storage naturecraft:0 model.stripped_oak_table.0 set value {\
     "event": {\
       "const": {\
         "place": {\
-        "sound": "block.wood.place"\
+          "sound": "block.wood.place"\
+        },\
+        "left_click": {\
+          "sound": "block.wood.break"\
         }\
       }\
     }\
   }\
 }
 
-function naturecraft:give {name:"naturecraft:0","nbt":"stripped_oak_table.0",model:"naturecraft:0/tables/stripped_oak_table/0",count:1,type:0}
+function naturecraft:give {name:"naturecraft:0","nbt":"stripped_oak_table",model:"naturecraft:0/tables/stripped_oak_table/0",count:1,type:0}

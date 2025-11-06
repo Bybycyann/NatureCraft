@@ -1,6 +1,13 @@
 {
     "pack": {
+        "description": {
+            "translate": "peminder.naturecraft.pack_description",
+            "fallback": "[lib] Easily register interactive models in the game",
+            "color": "green"
+        },
         "pack_format": 71,
-        "description": "\u00A7f[1.21.5]自定义交互模型支持库\u00A7r"
+        "supported_formats": [71,81],
+        "min_format": 71,
+        "max_format": 81
     }
 }
