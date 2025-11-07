@@ -1,5 +1,6 @@
 # 撤销触发器
 advancement revoke @s only naturecraft:place
+
 # 玩家标签 - add(用于添加实体指针)
 tag @s add NatureCraft.target
 

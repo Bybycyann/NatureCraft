@@ -1,3 +1,6 @@
+# 自然生成处理
+execute as @e[tag=NatureCraft.natural] positioned as @s run function naturecraft:place/natural
+
 # 碰撞箱属性动态更新(咕)
 
 # 随机刻模拟

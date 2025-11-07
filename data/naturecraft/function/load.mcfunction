@@ -12,8 +12,13 @@
 function #naturecraft:reg
 
 # 计分板依赖
-## 参数与运算
+## 变量
 scoreboard objectives add NatureCraft.var dummy
+## 常量
+scoreboard objectives add NatureCraft.const dummy
+    scoreboard players set #1e1 NatureCraft.const 10
+    scoreboard players set #1e2 NatureCraft.const 100
+    scoreboard players set #1e3 NatureCraft.const 1000
 
 ## 序列uid
 scoreboard objectives add NatureCraft.uid dummy
