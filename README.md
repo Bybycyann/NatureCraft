@@ -282,6 +282,8 @@ function naturecraft:give {name:"<存储模型数据的命名空间ID>","nbt":"<
   ```mcfunction
   execute align xyz run function naturecraft:place/init/states/link/0
   ```
+  
+- 玩家在结构中存储的模型调用需包含 `NatureCraft.natural` 识别标签。
 
 ### 位置
 
@@ -311,6 +313,7 @@ function naturecraft:give {name:"<存储模型数据的命名空间ID>","nbt":"<
 - 添加了状态条事件 `naturecraft:data/event/base/statusbar/0`, 可以在其它事件中调用该事件来在模型的 y 轴方向渲染一个状态条；
 - 添加了新的破坏事件 `naturecraft:data/event/base/group/break3` 用于多次受击确认(防止模型被误触破坏), 可搭配状态条事件使用；
 - 添加了新的破坏事件 `naturecraft:data/event/base/group/break2` 用于按战利品表生成掉落物的破坏事件;
+- 现在可以在自定义结构中调用模型生成了, 只需在 **Marker** or **Item frame** 上添加 `NatureCraft.natural` 标签用于识别。
 
 ### 待办
 
