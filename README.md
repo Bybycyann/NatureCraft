@@ -334,3 +334,4 @@ function naturecraft:give {name:"<存储模型数据的命名空间ID>","nbt":"<
 - 修复了 `NatureCraft.data` 未骑乘于 `NatureCraft.root` 的BUG;
 - 修复了由于修复吞方块BUG导致的无朝向模型随机转向的BUG;
 - 修复了由于更改数据取调地址但更改不完全导致的BUG;
+- 修复了结构生成时uid混乱的BUG;
