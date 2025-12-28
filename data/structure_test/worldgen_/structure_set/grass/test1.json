@@ -1,0 +1,13 @@
+{
+    "structures": [{
+        "structure": "structure_test:grass/test1",
+        "weight": 1
+    }],
+    "placement": {
+        "salt": 19011220,
+        "type": "minecraft:random_spread",
+        "separation": 0,
+        "spacing": 2,
+        "spread_type": "triangular"
+    }
+}

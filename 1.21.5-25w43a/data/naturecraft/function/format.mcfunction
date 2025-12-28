@@ -1,0 +1,1 @@
+tellraw @s "*format 1.21.5-25w43a"

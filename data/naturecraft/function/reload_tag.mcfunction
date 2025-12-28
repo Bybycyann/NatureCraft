@@ -1,0 +1,1 @@
+scoreboard players reset #_reload_ NatureCraft.var

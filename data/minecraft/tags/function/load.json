@@ -1,6 +1,7 @@
 {
     "replace": false,
     "values": [
-        "naturecraft:load"
+        "naturecraft:load",
+        "stk.load:load"
     ]
 }

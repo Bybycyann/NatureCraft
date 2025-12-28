@@ -263,6 +263,8 @@ function naturecraft:give {name:"<存储模型数据的命名空间ID>","nbt":"<
 
 - Marker 实体是事件函数调用时传递的执行实体**(@s)**;
 
+- Marker 实体骑乘于 Item_display**(root)**;
+
 - Item_display**(sub)** 实体是混合模型调用的补充实体, 骑乘于 Item_display**(root)**, 需要注意的是 <img src="https://zh.minecraft.wiki/images/Data_node_list.svg?d6aa9" alt='NBT列表/JSON数组' title='NBT列表/JSON数组' width='20' height='20'>**left_rotation** 已被占用, 若需在事件中调用, 请使用 <img src="https://zh.minecraft.wiki/images/Data_node_list.svg?d6aa9" alt='NBT列表/JSON数组' title='NBT列表/JSON数组' width='20' height='20'>**right_rotation** 属性进行旋转变换;
 
 - `NatureCraft.target` 为事件标签, 在事件结束后自动清除;
@@ -283,7 +285,9 @@ function naturecraft:give {name:"<存储模型数据的命名空间ID>","nbt":"<
   execute align xyz run function naturecraft:place/init/states/link/0
   ```
   
-- 玩家在结构中存储的模型调用需包含 `NatureCraft.natural` 识别标签。
+- 玩家在结构中存储的模型调用需包含 `NatureCraft.natural` 识别标签 (用于自然生成)。
+
+- 
 
 ### 位置
 
@@ -318,11 +322,13 @@ function naturecraft:give {name:"<存储模型数据的命名空间ID>","nbt":"<
 ### 待办
 
 - 游戏内模型注册;
-- 模型堆叠;
+- `states` 的谓词映射~~是的, 谓词映射是待办项~~
+- 模型堆叠(类海泡菜);
 - GUI模型管理;
 - 更多内置事件;
 - 实体碰撞箱动态更新；
-- `slime` 类型交互箱兼实体碰撞箱, 用于受击监听；
+- 添加 `slime` 类型交互箱兼实体碰撞箱, 用于受击监听；
+- 移动事件中需保证移动后的骑乘关系不发生变化;
 
 ### 优化
 
@@ -335,3 +341,7 @@ function naturecraft:give {name:"<存储模型数据的命名空间ID>","nbt":"<
 - 修复了由于修复吞方块BUG导致的无朝向模型随机转向的BUG;
 - 修复了由于更改数据取调地址但更改不完全导致的BUG;
 - 修复了结构生成时uid混乱的BUG;
+
+---
+
+**更新日期**: 2025/12/21.

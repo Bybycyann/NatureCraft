@@ -37,7 +37,9 @@ execute if data storage naturecraft:main data{type:"link"} at @s align xyz run f
 
 # 时钟与随机刻
 ## 随机刻
-execute if data storage naturecraft:main data.event.random run tag @s add NatureCraft.randomtick
+tag @s add NatureCraft.randomtick
+# 性能灾难
+# execute if data storage naturecraft:main data.event.random run function naturecraft:random_tick/init/0
 ## 时钟
 execute if data storage naturecraft:main data.event.clock run function naturecraft:clock/init
 

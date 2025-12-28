@@ -1,4 +1,7 @@
-# 按战利品表破坏
+# ```
+# 按战利品表生成掉落物
+# @param loot_table (string): 调用一个战利品表
+# ```
 
 # 调用战利品表
 execute as @n[type=minecraft:interaction,tag=NatureCraft.interaction_box,tag=NatureCraft.target] on target if entity @s[gamemode=!creative] run function naturecraft:data/event/base/loot_spawn with storage naturecraft:main const

@@ -1,0 +1,10 @@
+{
+    "values": ["stk.array:min/main"],
+    "@param" : {
+        "arr (int[])" : "待查找的数组"
+    },
+    "@return": {
+        "target (int)": "目标值(最小值)",
+        "index (int)": "目标值的索引"
+    }
+}

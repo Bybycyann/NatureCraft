@@ -2,9 +2,10 @@
 execute if entity @s[tag=NatureCraft.mark] run return 0
 
 # 标记子区块
-execute store result score #markX NatureCraft.var run data get entity @s Pos[0]
-execute store result score #markY NatureCraft.var run data get entity @s Pos[1]
-execute store result score #markZ NatureCraft.var run data get entity @s Pos[2]
+data modify storage naturecraft:main temp set from entity @s Pos
+execute store result score #markX NatureCraft.var run data get storage naturecraft:main temp[0]
+execute store result score #markY NatureCraft.var run data get storage naturecraft:main temp[1]
+execute store result score #markZ NatureCraft.var run data get storage naturecraft:main temp[2]
 scoreboard players set #Temp NatureCraft.var 16
 scoreboard players operation #markX NatureCraft.var /= #Temp NatureCraft.var
 scoreboard players operation #markY NatureCraft.var /= #Temp NatureCraft.var
@@ -13,22 +14,10 @@ scoreboard players operation #markX NatureCraft.var *= #Temp NatureCraft.var
 scoreboard players operation #markY NatureCraft.var *= #Temp NatureCraft.var
 scoreboard players operation #markZ NatureCraft.var *= #Temp NatureCraft.var
 execute at @s summon minecraft:marker run data modify entity @s Tags set value ["NatureCraft.marker"]
-execute store result entity @e[type=minecraft:marker,tag=NatureCraft.marker,sort=nearest,limit=1] Pos[0] double 1.0 run scoreboard players get #markX NatureCraft.var
-execute store result entity @e[type=minecraft:marker,tag=NatureCraft.marker,sort=nearest,limit=1] Pos[1] double 1.0 run scoreboard players get #markY NatureCraft.var
-execute store result entity @e[type=minecraft:marker,tag=NatureCraft.marker,sort=nearest,limit=1] Pos[2] double 1.0 run scoreboard players get #markZ NatureCraft.var
-execute as @e[type=minecraft:marker,tag=NatureCraft.marker,sort=nearest,limit=1] at @s run tp @s ~ ~-0.001 ~
+execute store result storage naturecraft:main temp[0] double 1.0 run scoreboard players get #markX NatureCraft.var
+execute store result storage naturecraft:main temp[1] double 1.0 run scoreboard players get #markY NatureCraft.var
+execute store result storage naturecraft:main temp[2] double 1.0 run scoreboard players get #markZ NatureCraft.var
+data modify entity @e[tag=NatureCraft.marker,type=minecraft:marker,sort=nearest,limit=1] Pos set from storage naturecraft:main temp
 
-# 随机刻事件
-## 获取 randomTickSpeed
-execute store result score #randomTickSpeed NatureCraft.var run gamerule randomTickSpeed
-## 抽取
-execute unless score #randomTickSpeed NatureCraft.var matches ..0 at @n[type=minecraft:marker,tag=NatureCraft.marker] run function naturecraft:randomtick/roll
-
-# 已执行目标标记
-execute at @e[type=minecraft:marker,tag=NatureCraft.marker,sort=nearest,limit=1] as @e[type=minecraft:marker,tag=NatureCraft.data,tag=NatureCraft.randomtick,dx=15,dy=15.001,dz=15] run tag @s add NatureCraft.mark
-
-# Debug
-execute at @e[type=minecraft:marker,tag=NatureCraft.marker,sort=nearest,limit=1] run particle cloud ~ ~ ~
-
-# 清除子区块标记
-kill @e[type=minecraft:marker,tag=NatureCraft.marker,sort=nearest,limit=1]
+# as|at chunk marker
+execute as @e[tag=NatureCraft.marker,type=minecraft:marker,sort=nearest,limit=1] at @s positioned ~ ~-0.001 ~ run function naturecraft:randomtick/chunk_marker

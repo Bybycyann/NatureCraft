@@ -1,0 +1,1 @@
+tellraw @s "*format main"
