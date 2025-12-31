@@ -9,7 +9,12 @@
 # ```
 
 # 游戏规则
+## 原生规则
 function naturecraft:gamerule
+## 数据包内置规则
+scoreboard objectives add gamerule dummy
+    # 数据包加载信息(defult: true)
+    execute unless score #naturecraft_packinfo gamerule matches 0..1 run scoreboard players set #naturecraft_packinfo gamerule 1
 
 # 数据注册
 function #naturecraft:reg

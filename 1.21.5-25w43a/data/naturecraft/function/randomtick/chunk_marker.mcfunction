@@ -1,6 +1,6 @@
 # 随机刻事件
 ## 获取 randomTickSpeed
-execute store result score #randomTickSpeed NatureCraft.var run gamerule random_tick_speed
+execute store result score #randomTickSpeed NatureCraft.var run gamerule randomTickSpeed
 ## 抽取
 execute unless score #randomTickSpeed NatureCraft.var matches ..0 run function naturecraft:randomtick/roll
 
