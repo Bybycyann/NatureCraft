@@ -4,7 +4,7 @@
 # ```
 
 # 调用战利品表
-execute as @n[type=minecraft:interaction,tag=NatureCraft.interaction_box,tag=NatureCraft.target] on target if entity @s[gamemode=!creative] run function naturecraft:data/event/base/loot_spawn with storage naturecraft:main const
+execute as @n[tag=NatureCraft.target,tag=NatureCraft.interaction_box,type=minecraft:interaction] on target if entity @s[gamemode=!creative] run function naturecraft:data/event/base/loot_spawn with storage naturecraft:main const
 
 # 音效
 function naturecraft:data/event/base/sound with storage naturecraft:main const

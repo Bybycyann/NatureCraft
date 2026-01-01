@@ -12,6 +12,8 @@ rotate @e[type=minecraft:item_display,tag=NatureCraft.init,tag=NatureCraft.displ
 data modify entity @e[type=minecraft:item_display,tag=NatureCraft.init,tag=NatureCraft.display,sort=nearest,limit=1] {} merge from storage naturecraft:main data.display.common
 # 模型数据
 data modify entity @e[type=minecraft:item_display,tag=NatureCraft.init,tag=NatureCraft.display,sort=nearest,limit=1] item.components."minecraft:item_model" set from storage naturecraft:main data.display.model
+# 模型映射变换源(custom_model_data)
+data modify entity @e[type=minecraft:item_display,tag=NatureCraft.init,tag=NatureCraft.display,sort=nearest,limit=1] item.components."minecraft:custom_model_data" set from storage naturecraft:main data.custom_model_data
 
 # 子模型
 execute unless data storage naturecraft:main data.display.submodels run return 0

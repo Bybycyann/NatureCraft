@@ -10,6 +10,8 @@ data modify entity @s Tags append from storage naturecraft:main data.Tags[]
 # 模型属性继承
 $data modify storage naturecraft:main data.model.name set value "$(name)"
 $data modify storage naturecraft:main data.model.nbt set value "$(nbt)"
+# custom_model_data
+data modify storage naturecraft:main data.custom_model_data set from entity @s data.custom_model_data
 data modify entity @s data set from storage naturecraft:main data
 
 # 朝向标准化
