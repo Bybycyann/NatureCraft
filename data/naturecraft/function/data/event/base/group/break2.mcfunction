@@ -1,6 +1,7 @@
 # ```
 # 按战利品表生成掉落物
 # @param loot_table (string): 调用一个战利品表
+# @param sound      (string): 播放一个音效
 # ```
 
 # 调用战利品表
