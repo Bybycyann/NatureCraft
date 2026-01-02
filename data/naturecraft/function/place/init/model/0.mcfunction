@@ -3,9 +3,10 @@
 # 生成展示实体
 summon minecraft:item_display ~ ~ ~ {Tags: ["NatureCraft.root","NatureCraft.display","NatureCraft.init"],\
     item: {\
-        id: "minecraft:chest",\
+        id: "minecraft:paper",\
         components: {\
-            "minecraft:item_model": "naturecraft:debug/error"}}}
+            "minecraft:item_model": "naturecraft:debug/error",\
+            "minecraft:container":[]}}}
 # 朝向
 rotate @e[type=minecraft:item_display,tag=NatureCraft.init,tag=NatureCraft.display,sort=nearest,limit=1] ~ ~
 # 渲染变换
