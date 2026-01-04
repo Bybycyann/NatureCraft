@@ -1,0 +1,12 @@
+{
+    "condition": "minecraft:value_check",
+    "value": {
+        "type": "minecraft:score",
+        "target": "this",
+        "score": "NatureCraft.uid"
+    },
+    "range": {
+        "max": {"type": "minecraft:score","target": {"type": "minecraft:fixed","name": "#uid"},"score": "NatureCraft.uid"},
+        "min": {"type": "minecraft:score","target": {"type": "minecraft:fixed","name": "#uid"},"score": "NatureCraft.uid"}
+    }
+}
