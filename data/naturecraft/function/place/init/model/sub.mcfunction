@@ -1,23 +1,23 @@
 # NatureCraft.data
 # 生成展示实体 sub标签结束后删除
-summon minecraft:item_display ~ ~ ~ {Tags: ["NatureCraft.sub","NatureCraft.display","NatureCraft.init"],\
+summon minecraft:item_display ~ ~ ~ {Tags: ["NatureCraft.sub","NatureCraft.display"],\
     item: {\
         id: "minecraft:paper",\
         components: {\
             "minecraft:item_model": "naturecraft:debug/error"}}}
 # 朝向
-rotate @e[type=minecraft:item_display,tag=NatureCraft.init,tag=NatureCraft.display,tag=NatureCraft.sub,sort=nearest,limit=1] ~ ~
+rotate @e[tag=NatureCraft.sub,tag=NatureCraft.display,type=minecraft:item_display,limit=1] ~ ~
 # 渲染变换
-data modify entity @e[type=minecraft:item_display,tag=NatureCraft.init,tag=NatureCraft.display,tag=NatureCraft.sub,sort=nearest,limit=1] {} merge from storage naturecraft:main submodels[0].common
+data modify entity @e[tag=NatureCraft.sub,tag=NatureCraft.display,type=minecraft:item_display,limit=1] {} merge from storage naturecraft:main submodels[0].common
 # 模型数据
-data modify entity @e[type=minecraft:item_display,tag=NatureCraft.init,tag=NatureCraft.display,tag=NatureCraft.sub,sort=nearest,limit=1] item.components."minecraft:item_model" set from storage naturecraft:main submodels[0].model
+data modify entity @e[tag=NatureCraft.sub,tag=NatureCraft.display,type=minecraft:item_display,limit=1] item.components."minecraft:item_model" set from storage naturecraft:main submodels[0].model
 
 # 骑乘
-ride @e[type=minecraft:item_display,tag=NatureCraft.init,tag=NatureCraft.display,tag=NatureCraft.sub,sort=nearest,limit=1] mount @e[type=minecraft:item_display,tag=NatureCraft.init,tag=NatureCraft.display,sort=nearest,limit=1]
+ride @e[tag=NatureCraft.sub,tag=NatureCraft.display,type=minecraft:item_display,limit=1] mount @e[tag=NatureCraft.init,tag=NatureCraft.display,type=minecraft:item_display,limit=1]
 
 # 列表与标签处理
 data remove storage naturecraft:main submodels[0]
-tag @e[tag=NatureCraft.init,tag=NatureCraft.display,tag=NatureCraft.sub] remove NatureCraft.sub
+tag @e[tag=NatureCraft.sub,tag=NatureCraft.display] remove NatureCraft.sub
 
 # 循环计数--
 scoreboard players remove #Temp NatureCraft.var 1
