@@ -1,4 +1,0 @@
-{
-    "values": ["stk.base:for/main"],
-    "@param param" : ["<init_function>","<condition>","<target_function>"]
-}
