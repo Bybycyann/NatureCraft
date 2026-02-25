@@ -35,7 +35,7 @@ execute unless score #facing NatureCraft.var matches 1 if data storage naturecra
 ## Link
 execute if data storage naturecraft:main data{type:"link"} at @s align xyz run function naturecraft:place/init/states/link/0
 ## Predicate
-# (待补充)
+execute if data storage naturecraft:main data{type:"predicate"} at @s align xyz run function naturecraft:place/init/states/predicate/0
 
 # 时钟与随机刻
 ## 随机刻
@@ -47,8 +47,6 @@ execute if data storage naturecraft:main data.event.clock run function naturecra
 
 # 模型
 execute rotated as @s align xyz positioned ~0.5 ~ ~0.5 run function naturecraft:place/init/model/0
-## 悬挂变换(弃案)
-# execute unless score #facing NatureCraft.var matches 1 as @e[type=minecraft:item_display,tag=NatureCraft.display,tag=NatureCraft.init,sort=nearest] run function naturecraft:place/init/model/hang/0
 
 # 骑乘
 execute if data storage naturecraft:main data.ride run function naturecraft:place/init/ride with storage naturecraft:main data.ride.height
