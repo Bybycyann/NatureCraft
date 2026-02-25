@@ -1,2 +1,0 @@
-for i in range(26):
-    print(f'execute if predicate {{"condition":"minecraft:value_check","value":{{"type":"storage","storage":"namespace:example","path":"temp"}},range:{i}}} run return run item replace block ~ ~ ~ container.{i} from block ~ ~ ~ container.26')
