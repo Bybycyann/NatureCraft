@@ -28,7 +28,7 @@
 
 我们推荐将 NC 模型文件 (下文简称模型文件) 在 *data/<命名空间>/function/data/model* 目录内定义。
 
-模型文件采用**函数注册**的方式, 通过编辑 SNBT 对象将模型类注册进**命令存储 (Command storage) **文件中, 其具有下列结构:
+模型文件采用**函数注册**的方式, 通过编辑 SNBT 对象将模型类注册进**命令存储 (Command storage)** 文件中, 其具有下列结构:
 
 <img src="image/model_definition.png" />
 
@@ -98,21 +98,21 @@ SW, S,SE,
 
 模型对象为一个复合实体, 其默认由下列实体组合而成:
 
-|          Entity          |                   Tags                    | Index score |
-| :----------------------: | :---------------------------------------: | :---------: |
-|      Marker**(@s)**      |            `NatureCraft.data`             |      ✅️      |
-|  Interaction**(main)**   |       `NatureCraft.interaction_box`       |      ✅️      |
-|         Shulker          |        `NatureCraft.collision_box`        |      ❌️      |
-| Interaction**(shulker)** |        `NatureCraft.collision_box`        |      ✅️      |
-|  Item_display**(root)**  | `NatureCraft.display`, `NatureCraft.root` |      ✅️      |
-|  Item_display**(sub)**   |           `NatureCraft.display`           |      ❌️      |
+|        Entity         |                   Tags                    | Index score |
+| :-------------------: | :---------------------------------------: | :---------: |
+|      Marker (@s)      |            `NatureCraft.data`             |      ✅️      |
+|  Interaction (main)   |       `NatureCraft.interaction_box`       |      ✅️      |
+|        Shulker        |        `NatureCraft.collision_box`        |      ❌️      |
+| Interaction (shulker) |        `NatureCraft.collision_box`        |      ✅️      |
+|  Item_display (root)  | `NatureCraft.display`, `NatureCraft.root` |      ✅️      |
+|  Item_display (sub)   |           `NatureCraft.display`           |      ❌️      |
 
 同一个模型对象下的实体共享一个**索引分数 (Index score)**, 上表中不包含索引分数 (即 **Index score** ❌️) 的实体依赖骑乘关系。
 
-|          根实体          |       骑乘实体        |
-| :----------------------: | :-------------------: |
-| Interaction**(shulker)** |        Shulker        |
-|  Item_display**(root)**  | Item_display**(sub)** |
+|        根实体         |      骑乘实体      |
+| :-------------------: | :----------------: |
+| Interaction (shulker) |      Shulker       |
+|  Item_display (root)  | Item_display (sub) |
 
 > [!WARNING]
 >
