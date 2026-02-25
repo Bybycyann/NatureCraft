@@ -2,7 +2,12 @@
 execute store result score #facing NatureCraft.var run data get entity @s Facing
 
 # 数据转移
-summon minecraft:marker ~ ~ ~ {Tags:["NatureCraft.data","NatureCraft.init"]}
+execute if score #facing NatureCraft.var matches 0 run summon minecraft:marker ~ ~0.03125 ~ {Tags:["NatureCraft.data","NatureCraft.init"]}
+execute if score #facing NatureCraft.var matches 1 run summon minecraft:marker ~ ~-0.03125 ~ {Tags:["NatureCraft.data","NatureCraft.init"]}
+execute if score #facing NatureCraft.var matches 2 run summon minecraft:marker ~ ~ ~0.03125 {Tags:["NatureCraft.data","NatureCraft.init"]}
+execute if score #facing NatureCraft.var matches 3 run summon minecraft:marker ~ ~ ~-0.03125 {Tags:["NatureCraft.data","NatureCraft.init"]}
+execute if score #facing NatureCraft.var matches 4 run summon minecraft:marker ~0.03125 ~ ~ {Tags:["NatureCraft.data","NatureCraft.init"]}
+execute if score #facing NatureCraft.var matches 5 run summon minecraft:marker ~-0.03125 ~ ~ {Tags:["NatureCraft.data","NatureCraft.init"]}
 data modify entity @e[type=minecraft:marker,tag=NatureCraft.init,sort=nearest,limit=1] data set from entity @s data
 kill @s
 
