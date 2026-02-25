@@ -2,7 +2,7 @@
     "pack": {
         "description": {
             "translate": "peminder.naturecraft.pack_description",
-            "fallback": "[lib] Easily register interactive models in the game",
+            "fallback": "[lib] Easily register interactive models in the game.",
             "color": "green"
         },
         "pack_format": 71,
@@ -13,16 +13,10 @@
     "overlays": {
         "entries": [
             {
-                "directory": "1.21.5-25w43a",
+                "directory": "gamerule-25w44a-bef",
                 "min_format": 71,
                 "max_format": 91,
                 "formats": [71,91]
-            },
-            {
-                "directory": "stk",
-                "min_format": 71,
-                "max_format": 95,
-                "formats": [71,95]
             }
         ]
     }
