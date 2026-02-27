@@ -66,7 +66,7 @@ for file in files:
             # 注册函数写入
             function_path.parent.mkdir(parents=True, exist_ok=True)
             function_path.touch(exist_ok=True)
-            function_path.write_text(f'data modify storage {namespace}:storage {nbt_path} set value {json.dumps(json.load(file_path.open('r', encoding='utf-8')))}', encoding='utf-8')
+            function_path.write_text(f'data modify storage {namespace}:naturecraft {nbt_path} set value {json.dumps(json.load(file_path.open('r', encoding='utf-8')))}', encoding='utf-8')
 # 注册表写入
 registry_path.write_text(json.dumps({'replace': False, 'values': registry}), encoding='utf-8')
 
