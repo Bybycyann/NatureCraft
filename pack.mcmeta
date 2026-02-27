@@ -5,10 +5,10 @@
             "fallback": "[lib] Easily register interactive models in the game.",
             "color": "green"
         },
-        "pack_format": 71,
-        "supported_formats": [71,95],
+        "pack_format": 81,
+        "supported_formats": [71,99],
         "min_format": 71,
-        "max_format": 95
+        "max_format": 99
     },
     "overlays": {
         "entries": [
