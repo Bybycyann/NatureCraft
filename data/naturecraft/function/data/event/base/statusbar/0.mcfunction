@@ -21,7 +21,7 @@
 #   └─(float)height: 状态条的渲染高度
 # 
 # 是否可在非事件中调用: FALSE
-# 问题: 33 行使用了execute on vehicle来更改执行对象到 NatureCraft.root, 外部直接调用会导致追踪到空实体
+# 问题: 46、47 行使用了execute on vehicle来更改执行对象到 NatureCraft.root, 外部直接调用会导致追踪到空实体
 # 原调用例:
 # execute as @n[type=slime] at @s run function naturecraft:data/event/base/statusbar/0 {statusbar_data:{value:{type:"score",score:"NatureCraft.var",name:"@p"},max:100,display:{type:1,duration:100,height:1}}}
 # ```

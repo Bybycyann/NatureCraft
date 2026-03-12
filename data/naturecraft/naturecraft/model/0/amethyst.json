@@ -1,0 +1,201 @@
+{
+  "template": {
+    "name": "naturecraft:main",
+    "nbt": "base"
+  },
+  "model":{
+    "type": "hang",
+    "towards": false,
+    "states": [
+      {
+        "model": {
+          "display": {
+            "common": {
+              "transformation": {
+                "left_rotation": [0.707,0.0,0.0,0.707]
+              }
+            },
+            "submodels": [{
+              "model": "naturecraft:0/amethyst/1",
+              "common": {
+                "transformation": {
+                  "left_rotation": [0.271,0.653,0.653,0.271],
+                  "translation": [0.0,0.5,0.0]
+                }
+              }
+            }]
+          },
+          "collision_box": {
+            "offset_x": 0.0,
+            "offset_y": -0.2187,
+            "offset_z": 0.18745
+          },
+          "interaction_box": {
+            "offset_x": 0.0,
+            "offset_y": -0.25,
+            "offset_z": 0.21875
+          }
+        },
+        "facing": 3
+      },
+      {
+        "model": {
+          "display": {
+            "common": {
+              "transformation": {
+                "left_rotation": [1.0,0.0,0.0,0.0]
+              }
+            },
+            "submodels": [{
+              "model": "naturecraft:0/amethyst/1",
+              "common": {
+                "transformation": {
+                  "left_rotation": [0.383,0.0,0.924,0.0],
+                  "translation": [0.0,0.5,0.0]
+                }
+              }
+            }]
+          },
+          "collision_box": {
+            "offset_x": 0.0,
+            "offset_y": -0.40615,
+            "offset_z": 0.0
+          },
+          "interaction_box": {
+            "offset_x": 0.0,
+            "offset_y": -0.46875,
+            "offset_z": 0.0
+          }
+        },
+        "facing": 0
+      },
+      {
+        "model": {
+          "display": {
+            "common": {
+              "transformation": {
+                "left_rotation": [0.707,0.0,0.0,-0.707]
+              }
+            },
+            "submodels": [{
+              "model": "naturecraft:0/amethyst/1",
+              "common": {
+                "transformation": {
+                  "left_rotation": [0.271,-0.653,0.653,-0.271],
+                  "translation": [0.0,0.5,0.0]
+                }
+              }
+            }]
+          },
+          "collision_box": {
+            "offset_x": 0.0,
+            "offset_y": -0.2187,
+            "offset_z": -0.18745
+          },
+          "interaction_box": {
+            "offset_x": 0.0,
+            "offset_y": -0.25,
+            "offset_z": -0.21875
+          }
+        },
+        "facing": 2
+      },
+      {
+        "model": {
+          "display": {
+            "common": {
+              "transformation": {
+                "left_rotation": [0.0,0.0,-0.707,0.707]
+              }
+            },
+            "submodels": [{
+              "model": "naturecraft:0/amethyst/1",
+              "common": {
+                "transformation": {
+                  "left_rotation": [0.653,0.653,-0.271,0.271],
+                  "translation": [0.0,0.5,0.0]
+                }
+              }
+            }]
+          },
+          "collision_box": {
+            "offset_x": 0.18745,
+            "offset_y": -0.2187,
+            "offset_z": 0.0
+          },
+          "interaction_box": {
+            "offset_x": 0.21875,
+            "offset_y": -0.25,
+            "offset_z": 0.0
+          }
+        },
+        "facing": 5
+      },
+      {
+        "model": {
+          "display": {
+            "common": {
+              "transformation": {
+                "left_rotation": [0.0,0.0,0.707,0.707]
+              }
+            },
+            "submodels": [{
+              "model": "naturecraft:0/amethyst/1",
+              "common": {
+                "transformation": {
+                  "left_rotation": [-0.653,0.653,0.271,0.271],
+                  "translation": [0.0,0.5,0.0]
+                }
+              }
+            }]
+          },
+          "collision_box": {
+            "offset_x": -0.18745,
+            "offset_y": -0.2187,
+            "offset_z": 0.0
+          },
+          "interaction_box": {
+            "offset_x": -0.21875,
+            "offset_y": -0.25,
+            "offset_z": 0.0
+          }
+        },
+        "facing": 4
+      }
+    ],
+    "item_name": {"translate":"","fallback":"水晶簇"},
+    "display": {
+      "model": "naturecraft:0/amethyst/0",
+      "submodels":[{
+        "model": "naturecraft:0/amethyst/1",
+        "common": {
+          "transformation": {
+            "left_rotation":[0.0,0.924,0.0,0.383],
+            "translation": [0.0,0.5,0.0]
+          }
+        }
+      }]
+    },
+    "light_level": 5,
+    "collision_box": {
+      "scale": 0.4374,
+      "offset_x": 0.0,
+      "offset_y": 0.0,
+      "offset_z": 0.0
+    },
+    "interaction_box": {
+      "height": 0.5,
+      "width": 0.5
+    },
+    "event": {
+      "const": {
+        "place": {
+        "sound": "block.amethyst_cluster.place"
+        },
+        "left_click": {
+          "sound": "block.amethyst_cluster.break"
+        }
+      }
+    }
+  }
+}

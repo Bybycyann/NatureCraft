@@ -29,6 +29,10 @@ tag @e[tag=!NatureCraft.natural,tag=NatureCraft.init] add NatureCraft.target
 ## 事件类型参数(0-place,1-leftclick,2-rightclick,3-random,4-clock)
 scoreboard players set #event_type NatureCraft.var 0
 execute as @e[type=minecraft:marker,tag=NatureCraft.data,tag=NatureCraft.init,sort=nearest,limit=1] at @s if data entity @s data.event.place run function naturecraft:event with entity @s data.event.place
+
+# smithed.entity
+tag @e[tag=NatureCraft.init] add smithed.entity
+
 ## 标签重置
 data remove entity @e[type=minecraft:interaction,tag=NatureCraft.target,limit=1] interaction
 tag @e[tag=NatureCraft.target] remove NatureCraft.target

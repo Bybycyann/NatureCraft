@@ -1,4 +1,4 @@
-$summon minecraft:text_display ~ ~ ~ {Tags:["NatureCraft.event.statusbar","NatureCraft.init"],\
+$summon minecraft:text_display ~ ~ ~ {Tags:["NatureCraft.event.statusbar","NatureCraft.init","smithed.entity"],\
     text:{"text":"\ue$(type)$(step)","font":"naturecraft:gui/statusbar/statusbar","color":"$(color)","shadow_color":[0,0,0,0]},\
     transformation:{translation:[0,$(height),0],left_rotation:[0,0,0,1],right_rotation:[0,0,0,1],scale:[1,1,1]},\
     background:0,billboard:"vertical",brightness:{sky:15,block:15}}
