@@ -240,6 +240,7 @@ function #namespace:example with storage naturecraft:main const
 ### 优化
 
 - 调整了模型放置阶段的数据调用, 现在会检查 storage data 而不是 entity data;
+- 优化了随机事件的逻辑, mspt 相较之前有明显下降
 
 ### BUG修复
 
@@ -253,4 +254,4 @@ function #namespace:example with storage naturecraft:main const
 
 ---
 
-**更新日期**: 2026/02/25.
+**更新日期**: 2026/03/21.
