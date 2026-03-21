@@ -226,6 +226,7 @@ function #namespace:example with storage naturecraft:main const
 - 为 `kill` 事件添加了对携带 `self` 标签的实体的特判;
 - 添加了 `uid_matcher` 谓词用在选择器中匹配相同uid的实体, 使用前需将目标uid存入 `#uid NatureCraft.var` 中;
 - 添加了 `predicate` 类型模型的状态映射;
+- 添加了 `#naturecraft:model.summon` 函数用于生成指定的模型对象;
 
 ### 待办
 
