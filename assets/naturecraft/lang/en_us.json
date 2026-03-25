@@ -1,0 +1,10 @@
+{
+    "peminder.naturecraft.license": "License：%s",
+    "peminder.naturecraft.link": "Link：%s %s",
+    "peminder.naturecraft.pack_name": "NatureCraft",
+    "peminder.naturecraft.pack_description": "[lib] Easily register interactive models in the game.",
+    "peminder.naturecraft.warning": "Some features require the use of resourcepacks",
+    "peminder.naturecraft.enabled_datapack": "Datapackage has been successfully activated %s",
+    
+    "error.naturecraft.model.summon.unknown_model": "Unknown model '%s'"
+}
