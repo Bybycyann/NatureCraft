@@ -11,7 +11,6 @@ tag @e[tag=NatureCraft.mark,type=minecraft:marker] remove NatureCraft.mark
 # 性能灾难
 # function naturecraft:random_tick/0
 
-
 # 时钟
 execute as @e[tag=NatureCraft.clock,tag=NatureCraft.data,type=minecraft:marker] run function naturecraft:clock/0
 
